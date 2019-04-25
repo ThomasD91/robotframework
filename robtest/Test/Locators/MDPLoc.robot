@@ -9,8 +9,4 @@ ${menuitem_MDP_loc}    xpath=.//*[contains(text(),'MDP')]
 ${invoerveld_MPEAN_loc}    xpath=.//*[contains(@id,'MeteringPointEAN_Input')]
 ${buttonzoeken_MDP}    xpath=.//*[contains(@id,'Search_Btn')] 
 ${klik_juiste_EAN}    xpath=.//*[contains(text(),'EAN_nummer')]    
-
-
-
-    
-
+${new_branche}    wat
