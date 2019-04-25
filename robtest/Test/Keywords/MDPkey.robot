@@ -1,18 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary    
+Library    String
 Resource    ../Variables/MDPvar.robot
-
-*** Variables ***
-#Locators Loginscherm
-${username_loc}    xpath=.//*[contains(@id,'UserNameInput')]
-${password_loc}    xpath=.//*[contains(@id,'PasswordInput')] 
-${loginbutton_loc}    xpath=.//*[contains(@id,'LoginButton')]
-
-#Locators MDP
-${menuitem_MDP_loc}    xpath=.//*[contains(text(),'MDP')]    
-${invoerveld_MPEAN_loc}    xpath=.//*[contains(@id,'MeteringPointEAN_Input')]
-${buttonzoeken_MDP}    xpath=.//*[contains(@id,'Search_Btn')] 
-
+Resource    ../Locators/MDPLoc.robot
 *** Keywords ***
 Browser starten en maximalizeren
     Open Browser    ${URL}     ${BROWSER} 
@@ -30,4 +20,5 @@ Zoek aansluiting
     Input Text     ${invoerveld_MPEAN_loc}    ${EAN}
     Click Button    ${buttonzoeken_MDP} 
     Sleep    3
-    Click Element    xpath=.//*[contains(text(),'${EAN}')]
+    ${LOC}    Replace String    ${klik_juiste_EAN}   EAN_nummer   ${EAN}
+    Click Element    ${LOC}    

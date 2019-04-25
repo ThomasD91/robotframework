@@ -7,10 +7,8 @@ Test Setup    Browser starten en maximalizeren
 Test Teardown    Close browser
 
 *** Test Cases ***
-FirstTest
-    Log    Hello world
 
-SeleniumTest
+Zoek aansluiting
     Login C-ARM
     Zoek aansluiting    871689200000000001    
 
