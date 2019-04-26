@@ -11,3 +11,7 @@ Test Teardown    Close browser
 Zoek aansluiting
     Login C-ARM
     Zoek aansluiting    871689200000000001
+    
+Dit is een voorbeeld
+    Login C-ARM
+    Log    einde voorbeeld
