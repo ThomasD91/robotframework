@@ -11,15 +11,3 @@ Test Teardown    Close browser
 Zoek aansluiting
     Login C-ARM
     Zoek aansluiting    871689200000000001
- 
- Test of dit werkt
-     Login C-ARM
-    Zoek aansluiting    871689200000000001d
-    
- En nu dit terwijl er een probleem is
-     Login C-ARM
-    Zoek aansluiting    871689200000000001d
-
-Ik heb namelijk deze aangemaakt
-        Login C-ARM
-    Zoek aansluiting    871689200000000001d
