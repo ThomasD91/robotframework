@@ -3,6 +3,7 @@
 ${username_loc}    xpath=.//*[contains(@id,'UserNameInput')]
 ${password_loc}    xpath=.//*[contains(@id,'PasswordInput')] 
 ${loginbutton_loc}    xpath=.//*[contains(@id,'LoginButton')]
+${error_message}    xpath=.//*[contains(@id,'block_wtSanitizedHtml2')]
 
 #Locators MDP
 ${menuitem_MDP_loc}    xpath=.//*[contains(text(),'MDP')]    

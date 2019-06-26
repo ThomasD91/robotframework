@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190423 14:44:08.543" rpa="false">
-<suite id="s1" name="Testsuite1" source="C:\Users\TDankers\eclipse-workspace\robtest\Test\Testsuite1.robot">
-<test id="s1-t1" name="FirstTest">
+<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190612 16:27:49.062" rpa="false">
+<suite id="s1" name="Robtest" source="C:\Users\TDankers\git\robotframework\robtest">
+<suite id="s1-s1" name="Test" source="C:\Users\TDankers\git\robotframework\robtest\Test">
+<suite id="s1-s1-s1" name="InlogTest" source="C:\Users\TDankers\git\robotframework\robtest\Test\InlogTest.robot">
+<test id="s1-s1-s1-t1" name="Invalid username">
 <kw name="Browser starten en maximalizeren" library="MDPkey" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -9,147 +11,311 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20190423 14:44:08.693" level="INFO">Opening browser 'Chrome' to base url 'https://arm-act.edsn.nl'.</msg>
-<status status="PASS" starttime="20190423 14:44:08.693" endtime="20190423 14:44:13.553"></status>
+<msg timestamp="20190612 16:27:49.245" level="INFO">Opening browser 'Chrome' to base url 'https://arm-act.edsn.nl'.</msg>
+<status status="PASS" starttime="20190612 16:27:49.245" endtime="20190612 16:27:53.299"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20190423 14:44:13.553" endtime="20190423 14:44:14.682"></status>
+<status status="PASS" starttime="20190612 16:27:53.299" endtime="20190612 16:27:54.427"></status>
 </kw>
-<status status="PASS" starttime="20190423 14:44:08.693" endtime="20190423 14:44:14.682"></status>
+<status status="PASS" starttime="20190612 16:27:49.245" endtime="20190612 16:27:54.428"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Login CARM" library="MDPkey">
 <arguments>
-<arg>Hello world</arg>
+<arg>invalid</arg>
+<arg>${Credentials}[1]</arg>
+<arg>Fail</arg>
 </arguments>
-<msg timestamp="20190423 14:44:14.683" level="INFO">Hello world</msg>
-<status status="PASS" starttime="20190423 14:44:14.683" endtime="20190423 14:44:14.683"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190423 14:44:14.684" endtime="20190423 14:44:16.820"></status>
-</kw>
-<status status="PASS" starttime="20190423 14:44:08.692" endtime="20190423 14:44:16.821" critical="yes"></status>
-</test>
-<test id="s1-t2" name="SeleniumTest">
-<kw name="Browser starten en maximalizeren" library="MDPkey" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20190423 14:44:16.824" level="INFO">Opening browser 'Chrome' to base url 'https://arm-act.edsn.nl'.</msg>
-<status status="PASS" starttime="20190423 14:44:16.824" endtime="20190423 14:44:20.705"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20190423 14:44:20.705" endtime="20190423 14:44:21.831"></status>
-</kw>
-<status status="PASS" starttime="20190423 14:44:16.823" endtime="20190423 14:44:21.831"></status>
-</kw>
-<kw name="Login C-ARM" library="MDPkey">
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=.//*[contains(@id,'UserNameInput')]</arg>
-<arg>@{Credentials}[0]</arg>
+<arg>${username_loc}</arg>
+<arg>${Username}</arg>
 </arguments>
-<msg timestamp="20190423 14:44:21.834" level="INFO">Typing text 'ACT_GEN_DANKERST' into text field 'xpath=.//*[contains(@id,'UserNameInput')]'.</msg>
-<status status="PASS" starttime="20190423 14:44:21.833" endtime="20190423 14:44:22.001"></status>
+<msg timestamp="20190612 16:27:54.429" level="INFO">Typing text 'invalid' into text field 'xpath=.//*[contains(@id,'UserNameInput')]'.</msg>
+<status status="PASS" starttime="20190612 16:27:54.428" endtime="20190612 16:27:54.506"></status>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <doc>Types the given password into text field identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=.//*[contains(@id,'PasswordInput')]</arg>
-<arg>@{Credentials}[1]</arg>
+<arg>${password_loc}</arg>
+<arg>${Password}</arg>
 </arguments>
-<msg timestamp="20190423 14:44:22.002" level="INFO">Typing password into text field 'xpath=.//*[contains(@id,'PasswordInput')]'.</msg>
-<status status="PASS" starttime="20190423 14:44:22.001" endtime="20190423 14:44:22.138"></status>
+<msg timestamp="20190612 16:27:54.507" level="INFO">Typing password into text field 'xpath=.//*[contains(@id,'PasswordInput')]'.</msg>
+<status status="PASS" starttime="20190612 16:27:54.506" endtime="20190612 16:27:54.601"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=.//*[contains(@id,'LoginButton')]</arg>
+<arg>${loginbutton_loc}</arg>
 </arguments>
-<msg timestamp="20190423 14:44:22.138" level="INFO">Clicking button 'xpath=.//*[contains(@id,'LoginButton')]'.</msg>
-<status status="PASS" starttime="20190423 14:44:22.138" endtime="20190423 14:44:23.986"></status>
+<msg timestamp="20190612 16:27:54.601" level="INFO">Clicking button 'xpath=.//*[contains(@id,'LoginButton')]'.</msg>
+<status status="PASS" starttime="20190612 16:27:54.601" endtime="20190612 16:27:55.006"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2</arg>
 </arguments>
-<msg timestamp="20190423 14:44:25.987" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20190423 14:44:23.986" endtime="20190423 14:44:25.987"></status>
+<msg timestamp="20190612 16:27:57.007" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190612 16:27:55.007" endtime="20190612 16:27:57.007"></status>
 </kw>
-<status status="PASS" starttime="20190423 14:44:21.833" endtime="20190423 14:44:25.987"></status>
-</kw>
-<kw name="Zoek aansluiting" library="MDPkey">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>871689200000000001</arg>
+<arg>${result}==Fail</arg>
+<arg>Verifieer text</arg>
 </arguments>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=.//*[contains(text(),'MDP')]</arg>
-</arguments>
-<msg timestamp="20190423 14:44:25.988" level="INFO">Clicking element 'xpath=.//*[contains(text(),'MDP')]'.</msg>
-<status status="PASS" starttime="20190423 14:44:25.988" endtime="20190423 14:44:26.786"></status>
+<msg timestamp="20190612 16:27:57.008" level="FAIL">Evaluating expression 'Fail==Fail' failed: NameError: name 'Fail' is not defined</msg>
+<status status="FAIL" starttime="20190612 16:27:57.007" endtime="20190612 16:27:57.008"></status>
 </kw>
+<status status="FAIL" starttime="20190612 16:27:54.428" endtime="20190612 16:27:57.008"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190612 16:27:57.009" endtime="20190612 16:27:59.123"></status>
+</kw>
+<status status="FAIL" starttime="20190612 16:27:49.244" endtime="20190612 16:27:59.123" critical="yes">Evaluating expression 'Fail==Fail' failed: NameError: name 'Fail' is not defined</status>
+</test>
+<test id="s1-s1-s1-t2" name="Invalid password">
+<kw name="Browser starten en maximalizeren" library="MDPkey" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190612 16:27:59.125" level="INFO">Opening browser 'Chrome' to base url 'https://arm-act.edsn.nl'.</msg>
+<status status="PASS" starttime="20190612 16:27:59.125" endtime="20190612 16:28:03.672"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20190612 16:28:03.672" endtime="20190612 16:28:04.807"></status>
+</kw>
+<status status="PASS" starttime="20190612 16:27:59.124" endtime="20190612 16:28:04.807"></status>
+</kw>
+<kw name="Login CARM" library="MDPkey">
+<arguments>
+<arg>${Credentials}[0]</arg>
+<arg>invalid</arg>
+<arg>Fail</arg>
+</arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=.//*[contains(@id,'MeteringPointEAN_Input')]</arg>
-<arg>${EAN}</arg>
+<arg>${username_loc}</arg>
+<arg>${Username}</arg>
 </arguments>
-<msg timestamp="20190423 14:44:26.787" level="INFO">Typing text '871689200000000001' into text field 'xpath=.//*[contains(@id,'MeteringPointEAN_Input')]'.</msg>
-<status status="PASS" starttime="20190423 14:44:26.787" endtime="20190423 14:44:27.226"></status>
+<msg timestamp="20190612 16:28:04.809" level="INFO">Typing text 'ACT_GEN_DANKERST' into text field 'xpath=.//*[contains(@id,'UserNameInput')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:04.809" endtime="20190612 16:28:04.928"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${password_loc}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:04.929" level="INFO">Typing password into text field 'xpath=.//*[contains(@id,'PasswordInput')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:04.929" endtime="20190612 16:28:05.004"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=.//*[contains(@id,'Search_Btn')]</arg>
+<arg>${loginbutton_loc}</arg>
 </arguments>
-<msg timestamp="20190423 14:44:27.226" level="INFO">Clicking button 'xpath=.//*[contains(@id,'Search_Btn')]'.</msg>
-<status status="PASS" starttime="20190423 14:44:27.226" endtime="20190423 14:44:27.332"></status>
+<msg timestamp="20190612 16:28:05.004" level="INFO">Clicking button 'xpath=.//*[contains(@id,'LoginButton')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:05.004" endtime="20190612 16:28:06.550"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
-<arg>3</arg>
+<arg>2</arg>
 </arguments>
-<msg timestamp="20190423 14:44:30.332" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20190423 14:44:27.332" endtime="20190423 14:44:30.332"></status>
+<msg timestamp="20190612 16:28:08.553" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190612 16:28:06.551" endtime="20190612 16:28:08.553"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>xpath=.//*[contains(text(),'${EAN}')]</arg>
+<arg>${result}==Fail</arg>
+<arg>Verifieer text</arg>
 </arguments>
-<msg timestamp="20190423 14:44:30.332" level="INFO">Clicking element 'xpath=.//*[contains(text(),'871689200000000001')]'.</msg>
-<status status="PASS" starttime="20190423 14:44:30.332" endtime="20190423 14:44:36.918"></status>
+<msg timestamp="20190612 16:28:08.554" level="FAIL">Evaluating expression 'Fail==Fail' failed: NameError: name 'Fail' is not defined</msg>
+<status status="FAIL" starttime="20190612 16:28:08.553" endtime="20190612 16:28:08.554"></status>
 </kw>
-<status status="PASS" starttime="20190423 14:44:25.988" endtime="20190423 14:44:36.919"></status>
+<status status="FAIL" starttime="20190612 16:28:04.808" endtime="20190612 16:28:08.554"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190423 14:44:36.919" endtime="20190423 14:44:39.024"></status>
+<status status="PASS" starttime="20190612 16:28:08.555" endtime="20190612 16:28:10.658"></status>
 </kw>
-<status status="PASS" starttime="20190423 14:44:16.823" endtime="20190423 14:44:39.025" critical="yes"></status>
+<status status="FAIL" starttime="20190612 16:27:59.124" endtime="20190612 16:28:10.659" critical="yes">Evaluating expression 'Fail==Fail' failed: NameError: name 'Fail' is not defined</status>
 </test>
-<status status="PASS" starttime="20190423 14:44:08.545" endtime="20190423 14:44:39.026"></status>
+<test id="s1-s1-s1-t3" name="Invalid pass and user">
+<kw name="Browser starten en maximalizeren" library="MDPkey" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:10.664" level="INFO">Opening browser 'Chrome' to base url 'https://arm-act.edsn.nl'.</msg>
+<status status="PASS" starttime="20190612 16:28:10.663" endtime="20190612 16:28:15.622"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20190612 16:28:15.622" endtime="20190612 16:28:16.739"></status>
+</kw>
+<status status="PASS" starttime="20190612 16:28:10.663" endtime="20190612 16:28:16.740"></status>
+</kw>
+<kw name="Login CARM" library="MDPkey">
+<arguments>
+<arg>invalid</arg>
+<arg>invalid</arg>
+<arg>Fail</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${username_loc}</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:16.741" level="INFO">Typing text 'invalid' into text field 'xpath=.//*[contains(@id,'UserNameInput')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:16.741" endtime="20190612 16:28:16.825"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${password_loc}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:16.826" level="INFO">Typing password into text field 'xpath=.//*[contains(@id,'PasswordInput')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:16.825" endtime="20190612 16:28:16.901"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${loginbutton_loc}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:16.902" level="INFO">Clicking button 'xpath=.//*[contains(@id,'LoginButton')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:16.902" endtime="20190612 16:28:17.332"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190612 16:28:19.333" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190612 16:28:17.333" endtime="20190612 16:28:19.334"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}==Fail</arg>
+<arg>Verifieer text</arg>
+</arguments>
+<msg timestamp="20190612 16:28:19.337" level="FAIL">Evaluating expression 'Fail==Fail' failed: NameError: name 'Fail' is not defined</msg>
+<status status="FAIL" starttime="20190612 16:28:19.335" endtime="20190612 16:28:19.338"></status>
+</kw>
+<status status="FAIL" starttime="20190612 16:28:16.740" endtime="20190612 16:28:19.338"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190612 16:28:19.339" endtime="20190612 16:28:21.455"></status>
+</kw>
+<status status="FAIL" starttime="20190612 16:28:10.661" endtime="20190612 16:28:21.456" critical="yes">Evaluating expression 'Fail==Fail' failed: NameError: name 'Fail' is not defined</status>
+</test>
+<test id="s1-s1-s1-t4" name="Valid credentials">
+<kw name="Browser starten en maximalizeren" library="MDPkey" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:21.464" level="INFO">Opening browser 'Chrome' to base url 'https://arm-act.edsn.nl'.</msg>
+<status status="PASS" starttime="20190612 16:28:21.462" endtime="20190612 16:28:25.433"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20190612 16:28:25.434" endtime="20190612 16:28:26.561"></status>
+</kw>
+<status status="PASS" starttime="20190612 16:28:21.460" endtime="20190612 16:28:26.562"></status>
+</kw>
+<kw name="Login CARM" library="MDPkey">
+<arguments>
+<arg>${Credentials}[0]</arg>
+<arg>${Credentials}[1]</arg>
+<arg>Succes</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${username_loc}</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:26.563" level="INFO">Typing text 'ACT_GEN_DANKERST' into text field 'xpath=.//*[contains(@id,'UserNameInput')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:26.563" endtime="20190612 16:28:26.675"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${password_loc}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:26.676" level="INFO">Typing password into text field 'xpath=.//*[contains(@id,'PasswordInput')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:26.675" endtime="20190612 16:28:26.756"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${loginbutton_loc}</arg>
+</arguments>
+<msg timestamp="20190612 16:28:26.756" level="INFO">Clicking button 'xpath=.//*[contains(@id,'LoginButton')]'.</msg>
+<status status="PASS" starttime="20190612 16:28:26.756" endtime="20190612 16:28:29.565"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190612 16:28:31.568" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190612 16:28:29.566" endtime="20190612 16:28:31.568"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}==Fail</arg>
+<arg>Verifieer text</arg>
+</arguments>
+<msg timestamp="20190612 16:28:31.571" level="FAIL">Evaluating expression 'Succes==Fail' failed: NameError: name 'Succes' is not defined</msg>
+<status status="FAIL" starttime="20190612 16:28:31.569" endtime="20190612 16:28:31.572"></status>
+</kw>
+<status status="FAIL" starttime="20190612 16:28:26.562" endtime="20190612 16:28:31.573"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190612 16:28:31.574" endtime="20190612 16:28:33.683"></status>
+</kw>
+<status status="FAIL" starttime="20190612 16:28:21.458" endtime="20190612 16:28:33.684" critical="yes">Evaluating expression 'Succes==Fail' failed: NameError: name 'Succes' is not defined</status>
+</test>
+<status status="FAIL" starttime="20190612 16:27:49.115" endtime="20190612 16:28:33.686"></status>
+</suite>
+<status status="FAIL" starttime="20190612 16:27:49.114" endtime="20190612 16:28:33.689"></status>
+</suite>
+<status status="FAIL" starttime="20190612 16:27:49.095" endtime="20190612 16:28:33.692"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0">Critical Tests</stat>
-<stat pass="2" fail="0">All Tests</stat>
+<stat pass="0" fail="4">Critical Tests</stat>
+<stat pass="0" fail="4">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" id="s1" name="Testsuite1">Testsuite1</stat>
+<stat pass="0" fail="4" id="s1" name="Robtest">Robtest</stat>
+<stat pass="0" fail="4" id="s1-s1" name="Test">Robtest.Test</stat>
+<stat pass="0" fail="4" id="s1-s1-s1" name="InlogTest">Robtest.Test.InlogTest</stat>
 </suite>
 </statistics>
 <errors>

@@ -22,3 +22,20 @@ Zoek aansluiting
     Sleep    3
     ${LOC}    Replace String    ${klik_juiste_EAN}   EAN_nummer   ${EAN}
     Click Element    ${LOC}    
+    
+    
+Verifieer text
+    ${response}    Get Text    ${error_message}  
+    Should Be Equal As Strings    ${response}   Invalid username or password
+Login CARM
+    [Arguments]  ${Username}    ${Password}    ${result}
+    Input Text    ${username_loc}    ${Username} 
+    Input Password    ${password_loc}      ${Password}
+    Click Button    ${loginbutton_loc}
+    Sleep    2
+    Run Keyword If    ${result}==Fail    Verifieer text      
+    Else
+        Element Should Be Visible    ${menuitem_MDP_loc}   
+       
+        
+    
